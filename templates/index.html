@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <title>Computer Information</title>
+</head>
+
+<body>
+    <h1>Computer Information</h1>
+    <div>
+        <h2>System Information</h2>
+        <p>Your public IP address: {{ public_ip }}</p>
+        <p>Your local IP address: {{ local_ip }}</p>
+        <p>Your operating system: {{ os }} (version {{ os_version }})</p>
+        <p>Python version: {{ python_version }}</p>
+        <p>Your device: {{ device_type }}</p>
+        <p>MAC Address: {{ mac_address }}</p>
+    </div>
+
+    <div>
+        <h2>Location Information</h2>
+        <p>Your country: {{ country }}</p>
+        <p>Your city: {{ city }}</p>
+        <p>Your provider: {{ provider }}</p>
+    </div>
+
+    <!-- Добавьте этот скрипт, чтобы отображать имя пользователя браузера -->
+    <div>
+        <h2>Browser Information</h2>
+        <p>Your browser: {{ browser }} (version {{ browser_version }})</p>
+        <p>Your browser username: <span id="browser-username">Loading...</span></p>
+    </div>
+
+    <!-- Добавление информации о памяти и CPU -->
+   <div>
+    <h2>System Resources</h2>
+    <p>Total Memory: {{ total_memory }} bytes</p>
+    <p>Available Memory: {{ available_memory }} bytes</p>
+    <p>Used Memory: {{ used_memory }} bytes</p>
+    <p>CPU Usage: {{ cpu_percent }}%</p>
+</div>
+  
+
+
+    <script>
+        // JavaScript код для отображения имени пользователя браузера
+        var browserUsername = navigator.userAgent; // Получите строку пользователя браузера
+        document.getElementById("browser-username").textContent = browserUsername;
+    </script>
+</body>
+
+</html>
